@@ -1,0 +1,22 @@
+{
+  "name": "xchacha20_encrypt",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/main.ts",
+  "scripts": {
+    "run": "ts-node src/main.ts"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "libsodium-wrappers": "^0.7.9"
+   
+  },
+  "devDependencies": {
+    "@types/node": "^16.11.1",
+    "typescript": "^4.4.4",
+    "ts-node": "^10.3.0",
+    "@types/libsodium-wrappers": "^0.7.9"
+  }
+}
