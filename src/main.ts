@@ -41,19 +41,7 @@ function askQuestion(query : string) {
 			inputKey = (await askQuestion(`Enter the key for decrypting ${argsProcessed[1]} `))?.split(",").map(number => parseInt(number))
 			inputPublicIV =  (await askQuestion(`Enter the Public IV for decrypting ${argsProcessed[1]} `))
 			inputIV =  (await askQuestion(`Enter the private IV for decrypting ${argsProcessed[1]} `))
-            //readLineInstance.question(`Enter the key for decrypting ${argsProcessed[1]}`, (key)=>{
-            //     inputKey =   key?.split(",").map(number => parseInt(number))
-            //     if (inputKey.length != 32) throw new Error ("invalid key or key length")
-               
-        
-            // })
-			
-			// readLineInstance.question(`Enter the Nonce or Initializing Vector`,(iv)=>{
-			// 	inputIV = iv;
-			// })
-			// readLineInstance.question(`Enter the public IV`,(ivPublic)=>{
-			// 	inputPublicIV = ivPublic
-			// })
+           
 			decryptFile(
 				sodium,
 				Uint8Array.from(inputKey),
@@ -62,7 +50,6 @@ function askQuestion(query : string) {
 				Buffer.from(inputPublicIV,'hex')
 			);
 
-// console.log(inputIV,inputPublicIV,inputKey)
 			break;
         default:
             throw new Error("parameter should be either encrypt or decrypt")
