@@ -6,6 +6,8 @@
       "removeComments": true,
       "preserveConstEnums": true,
       "outDir": "build",
+      
+      "allowJs": true,
       "sourceMap": true
     },
     "include": ["src/*.ts"],

@@ -43,7 +43,7 @@ export const encryptFile = (
 	}
 	input.on('end', () => {
 		endTime = performance.now();
-		console.log(`Encrypting ${filePath} of ${convertBytes(fileSize)} took ${endTime - startTime} milliseconds  `);
+		console.log(`Encrypting of Xchacha20Poly1305-IEFT based  ${filePath} of size ${convertBytes(fileSize)} took ${endTime - startTime} milliseconds  `);
 		process.exit(0);
 	});
 };
