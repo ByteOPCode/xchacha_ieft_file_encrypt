@@ -38,7 +38,7 @@ export const decryptFile = ((sodium : typeof _sodium,key:Uint8Array,iv:Buffer,fi
     }
     input.on("end",()=>{
      endTime = performance.now()
-    console.log(`Decrypting ${filePath} of ${convertBytes(fileSize)} took ${endTime - startTime} milliseconds  `)
+     console.log(`Decryption of  ${filePath} using  Xchacha20Poly1305-IEFT of size ${convertBytes(fileSize)} MB took ${endTime - startTime} milliseconds  `);
     process.exit(0)
 })
 
