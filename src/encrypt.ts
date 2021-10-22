@@ -3,7 +3,6 @@ import { createReadStream, createWriteStream, statSync } from 'fs';
 import { blockSize } from './constants';
 import { convertBytes } from './util/util';
 
-
 /**
  * @name encryptFile
  * @param sodium instance of sodium
@@ -43,7 +42,7 @@ export const encryptFile = (
 	}
 	input.on('end', () => {
 		endTime = performance.now();
-		console.log(`Encrypting of Xchacha20Poly1305-IEFT based  ${filePath} of size ${convertBytes(fileSize)} took ${endTime - startTime} milliseconds  `);
+		console.log(`Encryption of  ${filePath} using  Xchacha20Poly1305-IEFT of size ${convertBytes(fileSize)} MB took ${endTime - startTime} milliseconds  `);
 		process.exit(0);
 	});
 };

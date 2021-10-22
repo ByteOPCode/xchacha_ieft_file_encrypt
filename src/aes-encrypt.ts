@@ -24,7 +24,7 @@ export const encryptFileAES = (
     })
     input.on('end', () => {
 		endTime = performance.now();
-		console.log(`Encrypting based of AES ${filePath} of ${convertBytes(fileSize)} took ${endTime - startTime} milliseconds  `);
+		console.log(`Encryption of  ${filePath} using  AES-CTR mode of size ${convertBytes(fileSize)} MB took ${endTime - startTime} milliseconds  `);
 		process.exit(0);
 	});
 

@@ -7,7 +7,6 @@ import { createInterface } from 'readline';
 import { encryptFileAES } from './aes-encrypt';
 import { decryptFileAES } from './aes-decrypt';
 
-
 function askQuestion(query : string) {
     const rl = createInterface({
         input: process.stdin,

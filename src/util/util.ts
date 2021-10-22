@@ -1,12 +1,8 @@
 
 export function convertBytes(bytes:number){
-    const units = ['bytes', 'KB', 'MB', 'GB', 'TB', 'PB', 'EB', 'ZB', 'YB'];
-   
-  let l = 0, n = bytes || 0;
-
-  while(n >= 1024 && ++l){
-      n = n/1024;
-  }
-  
-  return(n.toFixed(n < 10 && l > 0 ? 1 : 0) + ' ' + units[l]);
+    
+  return (bytes / 1024 / 1024).toFixed(2);
+    
 }
+
+//toDO show as MB
