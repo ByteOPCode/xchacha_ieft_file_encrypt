@@ -31,16 +31,18 @@ function askQuestion(query : string) {
 
 			var ivPublic = randomBytes(sodium.crypto_aead_xchacha20poly1305_ietf_NPUBBYTES);
 
-			console.log('Public Nonce: ', ivPublic.toString('hex'));
-			console.log('Private Nonce: ', iv.toString('hex'));
-			console.log('Key: ', key.toString());
+			// console.log('Public Nonce: ', ivPublic.toString('hex'));
+			// console.log('Private Nonce: ', iv.toString('hex'));
+			// console.log('Key: ', key.toString());
 		
-			encryptFile(sodium, key, iv, argsProcessed[1], ivPublic);
+			encryptFile(sodium, key, iv, argsProcessed[1], ivPublic)
+			
 		
 		break;
 		case 'encryptAES':
-			console.log('Key: ', key.toString());
+			// console.log('Key: ', key.toString());
 			encryptFileAES(key,  argsProcessed[1] )
+			
 			break;
 		case 'decrypt':
             let  inputKey :number[];

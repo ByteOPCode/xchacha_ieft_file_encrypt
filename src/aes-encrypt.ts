@@ -1,6 +1,6 @@
 import { createReadStream, createWriteStream, statSync } from "fs";
 import * as aes  from "../src/extras/aes-pure-js/index"
-import { convertBytes } from "./util/util";
+import { convertBytes, convertTimeToMBPerSecond } from "./util/util";
 import { aesCounterIteration, blockSize } from "./constants";
 export const encryptFileAES = (
 	
@@ -24,8 +24,11 @@ export const encryptFileAES = (
     })
     input.on('end', () => {
 		endTime = performance.now();
-		console.log(`Encryption of  ${filePath} using  AES-CTR mode of size ${convertBytes(fileSize)} MB took ${endTime - startTime} milliseconds  `);
-		process.exit(0);
+		
+		const totalDuration = endTime - startTime
+		console.log(` "AES", "Encrypt", ${filePath}, ${convertBytes(fileSize)}, ${totalDuration} , ${convertTimeToMBPerSecond(fileSize,totalDuration)}`)
+		//return (` "AES", "Encrypt", ${filePath}, ${convertBytes(fileSize)}, ${totalDuration} , ${totalDuration/(fileSize/1024)}`)
+	
 	});
 
 }

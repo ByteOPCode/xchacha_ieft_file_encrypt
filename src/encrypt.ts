@@ -1,7 +1,7 @@
 import * as _sodium from 'libsodium-wrappers';
 import { createReadStream, createWriteStream, statSync } from 'fs';
 import { blockSize } from './constants';
-import { convertBytes } from './util/util';
+import { convertBytes, convertTimeToMBPerSecond } from './util/util';
 
 /**
  * @name encryptFile
@@ -42,7 +42,7 @@ export const encryptFile = (
 	}
 	input.on('end', () => {
 		endTime = performance.now();
-		console.log(`Encryption of  ${filePath} using  Xchacha20Poly1305-IEFT of size ${convertBytes(fileSize)} MB took ${endTime - startTime} milliseconds  `);
-		process.exit(0);
-	});
+		const totalDuration = endTime - startTime
+		console.log(`"XChacha20", "Encrypt", ${filePath}, ${convertBytes(fileSize)}, ${totalDuration} ,  ${convertTimeToMBPerSecond(fileSize,totalDuration)}`)
+	})
 };
