@@ -1,0 +1,12 @@
+{
+    "sqltools.connections": [
+        {
+            "previewLimit": 50,
+            "driver": "SQLite",
+            "name": "test",
+            "database": "${workspaceFolder:xchacha20_encrypt}/database.sqlite",
+            "group": "a"
+        }
+    ],
+    "sqltools.useNodeRuntime": true
+}
