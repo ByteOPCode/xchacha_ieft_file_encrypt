@@ -40,8 +40,8 @@ export const decryptFileAES = ((key:Uint8Array,filePath:string,) =>{
     input.on("end",()=>{
      endTime = performance.now()
      const totalDuration = endTime - startTime
-     console.log(` "AES", "Decrypt", ${filePath}, ${convertBytes(fileSize)}, ${totalDuration} ,  ${convertTimeToMBPerSecond(fileSize,totalDuration)}`)
-     //console.log(`Decryption of  ${filePath} using AES CTR mode of size ${convertBytes(fileSize)} MB took ${endTime - startTime} milliseconds  `);
+     console.log(`AES, "Decrypt", ${filePath}, ${convertBytes(fileSize)}, ${totalDuration} ,  ${convertTimeToMBPerSecond(fileSize,totalDuration)}`)
+    
     
 })
 
