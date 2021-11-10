@@ -3,24 +3,11 @@ import { encryptFile } from './encrypt';
 import { randomBytes } from 'crypto';
 import { decryptFile } from './decrypt';
 import { existsSync } from 'fs';
-import { createInterface } from 'readline';
 import { encryptFileAES } from './aes-encrypt';
 import { decryptFileAES } from './aes-decrypt';
 import { readKeyFromFile, saveKeyToFile } from './util/util';
 import { keyFileName } from './constants';
-function askQuestion(query: string) {
-	const rl = createInterface({
-		input: process.stdin,
-		output: process.stdout
-	});
 
-	return new Promise<string>((resolve) =>
-		rl.question(query, (ans) => {
-			rl.close();
-			resolve(ans);
-		})
-	);
-}
 (async () => {
 	await _sodium.ready;
 	const sodium = _sodium;
