@@ -7,7 +7,7 @@ import { createInterface } from 'readline';
 import { encryptFileAES } from './aes-encrypt';
 import { decryptFileAES } from './aes-decrypt';
 import { readKeyFromFile, saveKeyToFile } from './util/util';
-import { keyFileName } from './util/constants';
+import { keyFileName } from './constants';
 function askQuestion(query: string) {
 	const rl = createInterface({
 		input: process.stdin,

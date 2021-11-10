@@ -1,1 +1,0 @@
-export const keyFileName = 'prem.key';
