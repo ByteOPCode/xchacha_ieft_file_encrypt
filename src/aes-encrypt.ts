@@ -27,7 +27,7 @@ export const encryptFileAES = (
 		
 		const totalDuration = endTime - startTime
 		console.log(` "AES", "Encrypt", ${filePath}, ${convertBytes(fileSize)}, ${totalDuration} , ${convertTimeToMBPerSecond(fileSize,totalDuration)}`)
-		//return (` "AES", "Encrypt", ${filePath}, ${convertBytes(fileSize)}, ${totalDuration} , ${totalDuration/(fileSize/1024)}`)
+		//return (`AES, "Encrypt", ${filePath}, ${convertBytes(fileSize)}, ${totalDuration} , ${totalDuration/(fileSize/1024)}`)
 	
 	});
 
