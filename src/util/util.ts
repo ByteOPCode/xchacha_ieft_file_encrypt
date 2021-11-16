@@ -1,16 +1,13 @@
 import { aesKey, cryptoKey, xChaChaKey } from '../model/crypto.model';
 import { readFileSync, writeFileSync } from 'fs';
 function convertBytesToMB(bytes: number) {
-	return (bytes / 1024 / 1024).toFixed(2);
+	return (bytes / 1024 / 1024);
 }
 
-// coonvert time to mb per second
-function convertTimeToMBPerSecond(bytes: number, time: number) {
+// calculate throughput
+function computeThroughput(bytes: number, time: number) {
 	time = time / 1000; // transform to seconds
-
-	// bytes / 10^6 =  mb
-
-	return (bytes / (1 / Math.pow(10, 3) * time) / Math.pow(10, 6) / 1024).toFixed(2);
+	return (convertBytesToMB(bytes) / time);
 }
 
 function saveKeyToFile(key: xChaChaKey | aesKey, fileName: string) {
@@ -37,4 +34,4 @@ function readKeyFromFile(fileName: string) {
 		console.error('something went wrong while reading keys from disk', e);
 	}
 }
-export { convertBytesToMB as convertBytes, convertTimeToMBPerSecond, saveKeyToFile, readKeyFromFile };
+export { convertBytesToMB as convertBytes, computeThroughput as convertTimeToMBPerSecond, saveKeyToFile, readKeyFromFile };
