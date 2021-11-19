@@ -39,7 +39,7 @@ export const decryptFile = ((sodium : typeof _sodium,key:Uint8Array,iv:Buffer,fi
     input.on("end",()=>{
      endTime = performance.now()
      const totalDuration = endTime - startTime
-     console.log(`XChacha20, "Decrypt", ${filePath}, ${convertBytes(fileSize)}, ${totalDuration} , ${ convertTimeToMBPerSecond(fileSize,totalDuration)}`)
+     console.log(`XChacha20, Decrypt, ${filePath}, ${convertBytes(fileSize)}, ${totalDuration} , ${ convertTimeToMBPerSecond(fileSize,totalDuration)}`)
      
 })
 

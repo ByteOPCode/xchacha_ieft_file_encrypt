@@ -10,6 +10,7 @@ function computeThroughput(bytes: number, time: number) {
 	return (convertBytesToMB(bytes) / time);
 }
 
+
 function saveKeyToFile(key: xChaChaKey | aesKey, fileName: string) {
 	try {
 		writeFileSync(fileName, JSON.stringify(key));

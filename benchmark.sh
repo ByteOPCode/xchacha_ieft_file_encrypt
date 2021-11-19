@@ -1,5 +1,5 @@
 
-echo "Algo, mode, File, FileSize in MB, Total Duration in MS, Normalization (mb/sec)">> "test.csv"
+echo "Algo, mode, File, FileSize in MB, Total Duration in MS, Processing Throughput (mb/sec)">> "test.csv"
 
 for i in {1..5};do
 filesToProcess=("baboon.png" "big_bunny_bucks.mp4" "linux-kernel.zip" "ubuntu-20.04.3-desktop-amd64.iso")    

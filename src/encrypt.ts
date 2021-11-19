@@ -43,6 +43,6 @@ export const encryptFile = (
 	input.on('end', () => {
 		endTime = performance.now();
 		const totalDuration = endTime - startTime
-		console.log(`"XChacha20", "Encrypt", ${filePath}, ${convertBytes(fileSize)}, ${totalDuration} ,  ${convertTimeToMBPerSecond(fileSize,totalDuration)}`)
+		console.log(`XChacha20, Encrypt, ${filePath}, ${convertBytes(fileSize)}, ${totalDuration} ,  ${convertTimeToMBPerSecond(fileSize,totalDuration)}`)
 	})
 };
