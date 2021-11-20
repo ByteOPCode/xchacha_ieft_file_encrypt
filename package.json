@@ -5,7 +5,6 @@
   "main": "src/main.ts",
   "scripts": {
     "test": "ts-node src/main.ts"
-    
   },
   "keywords": [],
   "author": "",
